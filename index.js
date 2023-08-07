@@ -181,6 +181,9 @@ app.get('/deleteuser/:id',(req,res) =>{
         // res.send(results)
         res.send('true')
     }
+        else if(b==5){
+            res.send(results);
+        }
         }
     )
 }),
