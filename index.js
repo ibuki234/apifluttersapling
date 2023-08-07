@@ -149,7 +149,7 @@ app.get('/deleteuser/:id',(req,res) =>{
     )
 }),
 
-    app.get('/getid/:email/:pass',(req,res) =>{
+    app.get('/id/:email/:pass',(req,res) =>{
         var email=req.params.email;
         var pass=req.params.pass;
     connection.query(
