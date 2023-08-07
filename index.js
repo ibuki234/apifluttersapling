@@ -69,7 +69,7 @@ app.get('/selectmember',(req,res) =>{
         function(err,results,fields){
             console.log(results)
             //res.send(results)
-            res.send('query_areas',{result:result});
+            res.send(results);
             //    res.send({"msg":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"})
         }
     )
