@@ -155,7 +155,6 @@ app.get('/deleteuser/:id',(req,res) =>{
     connection.query(
         'select id_user from user where email=? and password=? and pregis=1',[email,pass],
         function(err,results,fields){
-            console.log(results )
             res.send(results)
         }
     )
