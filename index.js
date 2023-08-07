@@ -69,7 +69,7 @@ app.get('/selectmember',(req,res) =>{
         function(err,results,fields){
             console.log(results)
             // res.send(results)
-              res.send(results{id})
+              res.send(results{"id_user"})
             //    res.send({"msg":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"})
         }
     )
