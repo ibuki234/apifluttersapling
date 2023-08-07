@@ -149,19 +149,14 @@ app.get('/deleteuser/:id',(req,res) =>{
     )
 }),
 
-      app.get('/iduser/:email/:pass',(req,res) =>{
-          var email=req.params.email;
-          var pass=req.params.pass;
-          const a=4;
-        const b=5;
+    app.get('/getid/:email/:pass',(req,res) =>{
+        var email=req.params.email;
+        var pass=req.params.pass;
     connection.query(
-      'select id_user from user where email=? and password=? and pregis=1',[email,pass],
-        // res.send("foundaccount"),
+        'select id_user from user where email=? and password=? and pregis=1',[email,pass],
         function(err,results,fields){
-          
-        res.send(results);
-
-    
+            console.log(results )
+            res.send(results)
         }
     )
 }),
