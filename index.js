@@ -62,7 +62,7 @@ app.get('/selectmember',(req,res) =>{
 }),
 
 
-    app.get('/selectuser',(req,res) =>{
+    app.get('/selectuser2',(req,res) =>{
     connection.query(
         'select * from user ',
     
@@ -149,16 +149,7 @@ app.get('/deleteuser/:id',(req,res) =>{
     )
 }),
 
-    app.get('/a/:email/:pass',(req,res) =>{
-        var email=req.params.email;
-        var pass=req.params.pass;
-    connection.query(
-        'select id_user from user where email=? and password=? and pregis=1',[email,pass],
-        function(err,results,fields){
-            res.send(results)
-        }
-    )
-}),
+   
 
 
         app.get('/updateimg/:img',(req,res) =>{
