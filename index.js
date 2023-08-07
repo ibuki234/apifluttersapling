@@ -62,7 +62,7 @@ app.get('/selectmember',(req,res) =>{
 }),
 
 
-    app.get('/selectusera',(req,res) =>{
+    app.get('/selectuser',(req,res) =>{
     connection.query(
         'select * from user ',
     
