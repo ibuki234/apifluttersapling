@@ -74,18 +74,7 @@ app.get('/selectmember',(req,res) =>{
         }
     )
 }),
-      app.get('/selectuser2',(req,res) =>{
-    connection.query(
-        'select * from user ',
-    
-        function(err,results,fields){
-            console.log(results)
-            //res.send(results)
-            res.send(results);
-            //    res.send({"msg":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"})
-        }
-    )
-}),
+     
 
 
     
