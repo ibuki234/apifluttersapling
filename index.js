@@ -196,8 +196,8 @@ app.get('/deleteuser/:id',(req,res) =>{
                }
     else if(results.length>=1){
         // res.send(results)
-        // res.send('true')
-          res.send(results);
+        res.send('true')
+          // res.send(results);
     }
         }
     )
