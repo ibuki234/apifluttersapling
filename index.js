@@ -62,18 +62,18 @@ app.get('/selectmember',(req,res) =>{
 }),
 
 
-    app.get('/selectuser',(req,res) =>{
-    connection.query(
-        'select * from user ',
+//     app.get('/selectuser',(req,res) =>{
+//     connection.query(
+//         'select * from user ',
     
-        function(err,results,fields){
-            console.log(results)
-            //res.send(results)
-            res.send(results);
-            //    res.send({"msg":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"})
-        }
-    )
-}),
+//         function(err,results,fields){
+//             console.log(results)
+//             //res.send(results)
+//             res.send(results);
+//             //    res.send({"msg":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"})
+//         }
+//     )
+// }),
       app.get('/selectuser2',(req,res) =>{
     connection.query(
         'select * from user ',
