@@ -74,6 +74,18 @@ app.get('/selectmember',(req,res) =>{
         }
     )
 }),
+      app.get('/selectuser2',(req,res) =>{
+    connection.query(
+        'select * from user ',
+    
+        function(err,results,fields){
+            console.log(results)
+            //res.send(results)
+            res.send(results);
+            //    res.send({"msg":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"})
+        }
+    )
+}),
 
 
     
@@ -149,17 +161,7 @@ app.get('/deleteuser/:id',(req,res) =>{
     )
 }),
 
-      app.get('/a',(req,res) =>{
-         var email=req.params.email;
-          var pass=req.params.pass;
-    connection.query(
-         'select * from user ',
-        function(err,results,fields){
-            console.log(results )
-            res.send(results)
-        }
-    )
-}),
+  
 
 
         app.get('/updateimg/:img',(req,res) =>{
