@@ -149,11 +149,11 @@ app.get('/deleteuser/:id',(req,res) =>{
     )
 }),
 
-      app.get('/getid/:email/:pass',(req,res) =>{
+      app.get('/getid',(req,res) =>{
          var email=req.params.email;
           var pass=req.params.pass;
     connection.query(
-         'select id_user from user where email=? and password=? and pregis=1',[email,pass],
+         'select * from user ',
         function(err,results,fields){
             console.log(results )
             res.send(results)
