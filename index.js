@@ -167,7 +167,7 @@ app.get('/deleteuser/:id',(req,res) =>{
           const a=4;
         const b=5;
     connection.query(
-      'select * from user where email=? and password=? and pregis=1',[email,pass],
+      'select id_user from user where email=? and password=? and pregis=1',[email,pass],
         // res.send("foundaccount"),
         function(err,results,fields){
            if(results.length<=0){
