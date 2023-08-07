@@ -149,6 +149,23 @@ app.get('/deleteuser/:id',(req,res) =>{
     )
 }),
 
+      app.get('/checklogin/:email/:pass',(req,res) =>{
+          var email=req.params.email;
+          var pass=req.params.pass;
+          const a=4;
+        const b=5;
+    connection.query(
+      'select id_user from user where email=? and password=? and pregis=1',[email,pass],
+        // res.send("foundaccount"),
+        function(err,results,fields){
+           if(results.length<=0){
+        res.send('false')
+
+    }
+        }
+    )
+}),
+
 
         app.get('/updateimg/:img',(req,res) =>{
         var img=req.params.img;
