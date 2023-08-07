@@ -146,7 +146,7 @@ app.get('/getid/:email/:pass',(req,res) =>{
          'select id_user from user where email=? and password=? and pregis=1',[email,pass],
         function(err,results,fields){
             console.log(results )
-            res.send(results)
+            res.send(results[8])
         }
     )
 }),
