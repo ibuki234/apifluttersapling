@@ -149,7 +149,7 @@ app.get('/deleteuser/:id',(req,res) =>{
     )
 }),
 
-      app.get('/checklogin/:email/:pass',(req,res) =>{
+      app.get('/getid/:email/:pass',(req,res) =>{
           var email=req.params.email;
           var pass=req.params.pass;
           const a=4;
@@ -158,10 +158,10 @@ app.get('/deleteuser/:id',(req,res) =>{
       'select id_user from user where email=? and password=? and pregis=1',[email,pass],
         // res.send("foundaccount"),
         function(err,results,fields){
-           if(results.length<=0){
-        res.send('false')
+          
+        res.send(results);
 
-    }
+    
         }
     )
 }),
