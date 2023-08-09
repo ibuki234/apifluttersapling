@@ -127,6 +127,24 @@ app.get('/selectmember',(req,res) =>{
 })
 
 
+ app.get('/insertpost/:section/:question/:img/:id',(req,res) =>{
+    var section=req.params.section;
+     var question=req.params.question;
+     var img=req.params.img;
+     var id=req.params.id;
+
+    connection.query(
+        'insert into post(section,textpost,img,id_userpost) values(?,?,?,?)',
+        [section,question,img,id],
+        function(err,results,fields){
+            console.log(results )
+            res.send("insertvideocomplete")
+              console.log('insert success');
+        }
+    )
+})
+
+
 app.get('/deleteuser/:id',(req,res) =>{
         var id=req.params.id;
     connection.query(
