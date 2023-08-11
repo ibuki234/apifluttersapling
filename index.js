@@ -138,7 +138,7 @@ app.get('/selectmember',(req,res) =>{
         [section,question,img],
         function(err,results,fields){
             console.log(results )
-            res.send("insertvideocomplete")
+            res.send(results)
               console.log('insert success');
         }
     )
