@@ -127,15 +127,15 @@ app.get('/selectmember',(req,res) =>{
 })
 
 
- app.get('/insertpost/:section/:question/:img/:id',(req,res) =>{
+ app.get('/insertpost/:section/:question/:img',(req,res) =>{
     var section=req.params.section;
      var question=req.params.question;
      var img=req.params.img;
-     var id=req.params.id;
+     // var id=req.params.id;
 
     connection.query(
-        'insert into post(section,textpost,img,id_userpost) values(?,?,?,?)',
-        [section,question,img,id],
+        'insert into post(section,textpost,img) values(?,?,?)',
+        [section,question,img],
         function(err,results,fields){
             console.log(results )
             res.send("insertvideocomplete")
