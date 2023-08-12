@@ -138,7 +138,7 @@ app.get('/selectmember',(req,res) =>{
         [section,question,img,id],
         function(err,results,fields){
             console.log(results )
-            res.send(results)
+            res.send('true')
               console.log('insert success');
         }
     )
