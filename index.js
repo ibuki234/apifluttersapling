@@ -74,6 +74,20 @@ app.get('/selectmember',(req,res) =>{
         }
     )
 }),
+
+
+      app.get('/selectpost',(req,res) =>{
+    connection.query(
+        'select * from post ',
+    
+        function(err,results,fields){
+            console.log(results)
+            //res.send(results)
+            res.send(results);
+            //    res.send({"msg":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"})
+        }
+    )
+}),
      
 
 
