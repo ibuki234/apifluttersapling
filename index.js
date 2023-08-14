@@ -134,7 +134,7 @@ app.get('/selectmember',(req,res) =>{
         [name,detail,video,0,0],
         function(err,results,fields){
             console.log(results )
-            res.send("insertvideocomplete")
+            res.send(results)
               console.log('insert success');
         }
     )
