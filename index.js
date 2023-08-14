@@ -130,8 +130,8 @@ app.get('/selectmember',(req,res) =>{
      var video=req.params.video;
 
     connection.query(
-        'insert into videostudy(namevideo,textexplain,video,report,tyevideo) values(?,?,?,?,?)',
-        [name,detail,video,0,0],
+        'insert into videostudy(namevideo,textexplain,video,report,typevideo) values(?,?,?,?,?)',
+        [name,detail,video,0,'default'],
         function(err,results,fields){
             console.log(results )
             res.send(results)
