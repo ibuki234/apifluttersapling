@@ -124,14 +124,15 @@ app.get('/selectmember',(req,res) =>{
 
 
 
- app.get('/insertvideo/:name/:detail/:video',(req,res) =>{
+ app.get('/insertvideo/:name/:detail/:video/:img',(req,res) =>{
     var name=req.params.name;
      var detail=req.params.detail;
      var video=req.params.video;
+     var img=req.params.img;
 
     connection.query(
-        'insert into videostudy(namevideo,textexplain,video,report,typevideo) values(?,?,?,?,?)',
-        [name,detail,video,0,'default'],
+        'insert into videostudy(namevideo,textexplain,video,imgvideo,report,typevideo) values(?,?,?,?,?,?)',
+        [name,detail,video,img,0,'default'],
         function(err,results,fields){
             console.log(results )
             res.send(results)
