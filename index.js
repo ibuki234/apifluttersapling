@@ -231,13 +231,14 @@ app.get('/getid/:email/:pass',(req,res) =>{
       'select id_user from user where email=? and password=? and pregis=1',[email,pass],
         // res.send("foundaccount"),
         function(err,results,fields){
-           if(results.length<=0){
-        res.send('false')
-
-    }
-               else if(email=="Admin69@gmail.com" && pass=="090165"){
+        
+                if(email=="Admin69@gmail.com" && pass=="090165"){
                    res.send('admin')
                }
+               else if(results.length==0){
+                res.send('false')
+        
+            }
     else if(results.length>=1){
         // res.send(results)
         res.send('true')
