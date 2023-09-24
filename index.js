@@ -183,6 +183,18 @@ app.get('/deleteuser/:id',(req,res) =>{
     )
 }),
 
+    app.get('/deletepost/:id',(req,res) =>{
+        var id=req.params.id;
+    connection.query(
+        'delete from post where id_post=?',[id],
+        function(err,results,fields){
+            console.log(results )
+            res.send(results)
+        }
+    )
+}),
+
+
     
 app.get('/getid/:email/:pass',(req,res) =>{
            var email=req.params.email;
