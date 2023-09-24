@@ -223,6 +223,21 @@ app.get('/getid/:email/:pass',(req,res) =>{
     )
 }),
 
+
+         app.get('/editpost/:section/:text/:img/:id',(req,res) =>{
+             var section=req.params.section;
+             var textpost=req.params.textpost;
+             var img=req.params.img;
+             var id=req.params.id;
+    connection.query(
+        'update user set section=?,textpost=?,img=? where id_user=?',[section,text,img,id],
+        function(err,results,fields){
+            console.log(results )
+            res.send(results)
+        }
+    )
+}),
+
   
 
 
