@@ -229,7 +229,7 @@ app.get('/getid/:email/:pass',(req,res) =>{
              var textpost=req.params.textpost;
              var id=req.params.id;
     connection.query(
-        'update user set section=?,textpost=? where id_post=?',[section,text,id],
+        'update post set section=?,textpost=? where id_post=?',[section,text,id],
         function(err,results,fields){
             console.log(results )
             res.send(results)
@@ -242,7 +242,7 @@ app.get('/getid/:email/:pass',(req,res) =>{
              var img=req.params.img;
              var id=req.params.id;
     connection.query(
-        'update user set img=? where id_post=?',[img,id],
+        'update post set img=? where id_post=?',[img,id],
         function(err,results,fields){
             console.log(results )
             res.send(results)
