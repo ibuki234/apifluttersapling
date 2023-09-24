@@ -224,13 +224,25 @@ app.get('/getid/:email/:pass',(req,res) =>{
 }),
 
 
-         app.get('/editpost/:section/:text/:img/:id',(req,res) =>{
+         app.get('/editpost/:section/:text/:id',(req,res) =>{
              var section=req.params.section;
              var textpost=req.params.textpost;
+             var id=req.params.id;
+    connection.query(
+        'update user set section=?,textpost=? where id_post=?',[section,text,id],
+        function(err,results,fields){
+            console.log(results )
+            res.send(results)
+        }
+    )
+}),
+
+            app.get('/editimgpost/:img/:id',(req,res) =>{
+     
              var img=req.params.img;
              var id=req.params.id;
     connection.query(
-        'update user set section=?,textpost=?,img=? where id_user=?',[section,text,img,id],
+        'update user set img=? where id_post=?',[img,id],
         function(err,results,fields){
             console.log(results )
             res.send(results)
