@@ -226,7 +226,7 @@ app.get('/getid/:email/:pass',(req,res) =>{
 
          app.get('/editpost/:section/:text/:id',(req,res) =>{
              var section=req.params.section;
-             var textpost=req.params.textpost;
+             var textpost=req.params.text;
              var id=req.params.id;
     connection.query(
         'update post set section=?,textpost=? where id_post=?',[section,textpost,id],
