@@ -229,7 +229,7 @@ app.get('/getid/:email/:pass',(req,res) =>{
              var textpost=req.params.textpost;
              var id=req.params.id;
     connection.query(
-        'update post set section=?,textpost=? where id_post=?',[section,text,id],
+        'update post set section=?,textpost=? where id_post=?',[section,textpost,id],
         function(err,results,fields){
             console.log(results )
             res.send(results)
