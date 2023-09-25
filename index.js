@@ -163,6 +163,23 @@ app.get('/selectmember',(req,res) =>{
 })
 
 
+    app.get('/insertcomment/:messege/:imgcom/:idusercom/:idpostcom/:status',(req,res) =>{
+    var messege=req.params.messege;
+     var imgcom=req.params.imgcom;
+     var iduser=req.params.idusercom;
+     var idpostcom=req.params.idpostcom;
+    connection.query(
+        'insert into comment(messege,imgcom,id_usercom,id_postcom,status) values(?,?,?,?,?)',
+        [messege,imgcom,iduser,idpostcom],
+        function(err,results,fields){
+            console.log(results )
+            res.send(results)
+              console.log('insert success');
+        }
+    )
+})
+
+
 //     app.get('/updatepostid/:id',(req,res) =>{
 //         var id=req.params.id;
 //     connection.query(
