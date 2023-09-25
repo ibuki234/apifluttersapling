@@ -134,7 +134,7 @@ app.get('/selectmember',(req,res) =>{
      var idpost=req.params.idpost;
     connection.query(
         'insert into comment(messege,imgcom,id_usercom,id_postcom,status) values(?,?,?,?,?)',
-        [messege,imgcom,iduser,idpost],
+        [messege,imgcom,iduser,idpost,''],
         function(err,results,fields){
             console.log(results )
             res.send(results)
