@@ -127,6 +127,24 @@ app.get('/selectmember',(req,res) =>{
 
 
 
+    app.get('/insertcomment/:messege/:imgcom/:iduser/:idpost',(req,res) =>{
+    var messege=req.params.messege;
+     var imgcom=req.params.imgcom;
+     var iduser=req.params.iduser;
+     var idpost=req.params.idpost;
+    connection.query(
+        'insert into comment(messege,imgcom,id_usercom,id_postcom,status) values(?,?,?,?,?)',
+        [messege,imgcom,iduser,idpost],
+        function(err,results,fields){
+            console.log(results )
+            res.send(results)
+              console.log('insert success');
+        }
+    )
+})
+
+
+
  app.get('/insertvideo/:name/:detail/:video/:img',(req,res) =>{
     var name=req.params.name;
      var detail=req.params.detail;
