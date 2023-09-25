@@ -78,7 +78,7 @@ app.get('/selectmember',(req,res) =>{
 
       app.get('/selectcomment/:idpost',(req,res) =>{
     connection.query(
-        'SELECT messege,imgcom,name,imguser FROM `comment` INNER JOIN user ON id_usercom = id_user WHERE id_postcom=?',
+        'SELECT messege,imgcom,name,imguser FROM comment INNER JOIN user ON id_usercom = id_user WHERE id_postcom=?',
          [idpost]
         function(err,results,fields){
             console.log(results)
